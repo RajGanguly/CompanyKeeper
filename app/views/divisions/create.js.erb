@@ -1,0 +1,7 @@
+$("input#division-name-text").val("");
+$("#created-divisions-div").html("").append("<%= j render partial: 'list_new_division', locals: {newDivision: @newDivision} %>")
+$("#created-divisions-div").show();
+$("div#new-division-form").hide();
+$("p#list-desc").text('List of all divisions');
+$("ul#company-branches-ul").hide();
+$("ul#company-divisions-ul").append("<%= j render partial: 'list_all_company_divisions', locals: {divisions: @divisions} %>").show();

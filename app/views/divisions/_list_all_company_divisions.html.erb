@@ -1,0 +1,3 @@
+<% divisions.each do |div| %>
+   <li class="list-group-item"><h3>Division name :  <p class="badge badge-secondary"><%= div.name %></p><p><%= link_to image_tag("home.png", :border=>0, :width => 20, :height => 20), division_division_page_path(div.id)%></p></h3></li>
+<% end %>

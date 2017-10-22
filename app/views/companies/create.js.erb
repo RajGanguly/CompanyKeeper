@@ -1,0 +1,3 @@
+$("input#company-name-text").val("");
+$("#created-companies").html("").append("<%= j render partial: 'list_new_company', locals: {newCompany: @newCompany} %>")
+$("#created-companies").show();

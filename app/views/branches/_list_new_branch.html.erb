@@ -1,0 +1,22 @@
+<div class="row" style="padding: 5%; color: #270056">
+  <div class="col"><h3>Branch Name</h3></div>
+  <div class="col"><h3><%= newBranch.name %></h3></div>
+  <div class="w-100"></div>
+  <div class="col"><h3>Branch Address</h3></div>
+  <div class="col"><h3><%= newBranch.address %></h3></div>
+  <div class="w-100"></div>
+  <div class="col"><h3>Landline number</h3></div>
+  <div class="col"><h3><%= newBranch.landline %></h3></div>
+  <br>
+  <br>
+  <div class="w-100">
+    <div class="row">
+      <div class="col">
+        <span style="margin-left: 40%;"><%= button_to "Visit branch page", branch_branch_page_path(newBranch.id), class: "btn btn-success", id: "branch-page-btn", :type => "button", :method => "get"%></span>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+

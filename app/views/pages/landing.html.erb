@@ -1,0 +1,35 @@
+<div class="parent-container">
+    <div style="border-color: rgb(136, 145, 144); border-radius: 2em;">
+		<div class= "container-fluid">
+		  <div class="row-fluid">
+		    <div class="landing-bg">
+		       <div class= "lead text-centre">
+		          <h5>This is a company maker portal, where you can create a company and it's various components like branches and divisions. </h5>
+		       </div>
+		    </div>
+		  </div>
+		</div>  
+	  
+		<div class="container-fluid">
+		  <div class="row-fluid">
+		    <div style= "margin-left: 45%; padding: 2%;">
+		    <%= button_tag "Create a Company", class: "btn btn-primary", id: "create_company", onclick: "javascript: showForm()", :type => "button"%>
+		  </div>
+		</div> 
+
+		<div id= "new-company-form" style="display: none; margin-left: 2%;">
+	        <div class="container-fluid">
+	          <div class="row-fluid">
+	            <%= render "companies/new_company_form" %>
+	          </div>
+	        </div>    
+		</div>  
+
+		<div id= "created-companies">
+
+		</div> 
+	</div>	
+</div>	
+
+
+

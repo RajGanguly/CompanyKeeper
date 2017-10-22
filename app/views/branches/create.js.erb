@@ -1,0 +1,8 @@
+$("input#branch-name-text").val("");
+$("input#branch-address-text").val("");
+$("#created-branches-div").append("<%= j render partial: 'list_new_branch', locals: {newBranch: @newBranch} %>")
+$("#created-branches-div").show();
+$("div#new-branch-form").hide();
+$("p#list-desc").text('List of all branches');
+$("ul#company-branches-ul").append("<%= j render partial: 'list_all_company_branches', locals: {branches: @branches} %>").show();
+$("ul#company-divisions-ul").hide();

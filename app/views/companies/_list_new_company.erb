@@ -1,0 +1,17 @@
+<div class= "parent-container">
+    <div class= "container-fluid">
+        <div class= "row-fluid">
+			<div class="card border border-success">
+			  <div class="text-center" style="padding: 0.8em;">
+			    <span class= "text-center">Find below the company you have just created</span>
+			  </div>
+			</div>
+		</div>	
+		<div class= "text-center">
+		  <h4>Company name : <%= newCompany.name %></h4>
+		</div>
+	</div>
+	<div style= "margin-left: 45%;">
+       <%= button_to "Visit company page", company_company_page_path(newCompany.id), class: "btn my-btn-1", id: "create_company_main", :type => "button", :method => "get"%>
+    </div>   
+</div>	

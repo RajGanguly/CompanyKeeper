@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CompanyKeeper</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="cm-bg">
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">
+		        <%= image_tag "misc/cresco-icon.png", height: '40', width: '40' %>
+		      </a>
+		    </div>
+		      
+		    <div>
+		      <p class="text-left"><h1>Company Maker</h1></p>
+		    </div>
+		  </div>
+		</nav>
+	</div>	
+	<%= yield %>
+
+
+    <div class="cm-footer">
+	    <footer class="footer">
+	      <div class="container">
+	        <span class="text-muted text-center" style="margin-left: 35%;"><h3>This is a sample project made for Mr. Ayush Ruia.</h3></span>
+	      </div>
+	    </footer>	
+    </div>
+
+  </body>
+</html>

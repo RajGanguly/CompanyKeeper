@@ -1,0 +1,16 @@
+<div class= "parent-container" style="width: 100%; min-width: 0;">
+  <%= form_for(@company, url: companies_path, :html => { class: "form-inline", id: "new-company-create" },remote: true, method: 'POST') do |f| %>
+     <div class= "form-group" style="width: 24%;">
+       <%= f.label :name, 'Enter a Company Name :   ' %> 
+    </div> 
+    <div class="form-group mx-sm-8" style="width: 50%;"> 
+      
+      <%= f.text_field :name, :class => 'form-control large-input-grp width-100', :id => "company-name-text", :placeholder => "Enter any Company Name" %>     
+    </div>
+    <div class="form-group" style="width: 20%; padding: 2%;"> 
+      <%= button_tag(type: 'submit', class: "btn btn-success", id: "create_company_main") do %>
+        Create
+    </div>    
+    <% end %>
+  <%end%>
+</div>

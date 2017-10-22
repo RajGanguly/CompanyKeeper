@@ -1,0 +1,17 @@
+<div class= "parent-container">
+  <%= form_for(@division, url: company_divisions_path, :html => {id: "new-division-create" },remote: true, method: 'POST') do |f| %>
+     <div class= "form-group">
+       <%= f.label :name, 'Enter a Division Name :   ' %> 
+       <%= f.text_field :name, :class => 'form-control', :id => "division-name-text", :placeholder => "Enter any Division Name" %> 
+       <small class="form-text text-muted">Enter a relevant division name</small>
+    </div> 
+
+    <div class="w-100">
+      <span style="margin-left: 45%;"><%= button_tag(type: 'submit', class: "btn btn-success", id: "create_division_btn") do %>
+        Create 
+      </span>       
+    </div>
+
+    <% end %>
+  <%end%>
+</div>

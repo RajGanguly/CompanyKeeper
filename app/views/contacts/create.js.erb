@@ -1,0 +1,20 @@
+<% if @branch %>
+	$("input#branch-contact-name-text").val("");
+	$("input#branch-contact-mobile-text").val("");
+	$("input#branch-contact-email-text").val("");
+	$("input#branch-contact-designation-text").val("");
+	$("div#new-branch-contact-form").hide();
+	$("#created-contacts-div").html("").append("<%= j render partial: 'list_new_contact', locals: {newContact: @newContact} %>")
+	$("#created-contacts-div").show();
+	$("ul#branch-contacts-ul").html("").append("<%= j render partial: 'list_all_contacts', locals: {contacts: @allContacts} %>").show();
+
+<% else %>
+	$("input#division-contact-name-text").val("");
+	$("input#division-contact-mobile-text").val("");
+	$("input#division-contact-email-text").val("");
+	$("input#division-contact-designation-text").val("");
+	$("div#new-division-contact-form").hide();
+	$("#created-contacts-div").html("").append("<%= j render partial: 'list_new_contact', locals: {newContact: @newContact} %>")
+	$("#created-contacts-div").show();
+	$("ul#division-contacts-ul").html("").append("<%= j render partial: 'list_all_contacts', locals: {contacts: @allContacts} %>").show();
+<% end %>

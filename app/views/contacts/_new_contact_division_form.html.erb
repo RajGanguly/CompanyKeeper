@@ -1,0 +1,50 @@
+<div class= "parent-container">
+  <%= form_for(@contact, url: division_contacts_path, :html => { class: "form-inline", id: "new-division-contact-create" },remote: true, method: 'POST') do |f| %>
+ 
+    <div class="row"> 
+      <div class="col">
+        <%= f.label :name, 'Enter a Contact Name :   ' %> 
+      </div>  
+      <div class="col">
+        <%= f.text_field :name, :class => 'form-control large-input-grp', :id => "division-contact-name-text", :placeholder => "Enter any Company Name" %>
+      </div>
+      <div class="w-100"></div> 
+
+      <div class="col">
+        <%= f.label :mobile, 'Enter Contact mobile number :   ' %> 
+      </div>  
+      <div class="col">
+        <%= f.number_field :mobile, :class => 'form-control large-input-grp', :id => "division-contact-mobile-text", :placeholder => "Enter Contact mobile number" %>
+      </div>
+      <div class="w-100"></div>  
+
+      <div class="col">
+        <%= f.label :email, 'Enter Contact email :   ' %>  
+      </div>  
+      <div class="col">
+        <%= f.email_field :email, :class => 'form-control large-input-grp', :id => "division-contact-email-text", :placeholder => "Enter Contact email" %>  
+      </div>
+
+      <div class="w-100"></div>  
+
+      <div class="col">
+        <%= f.label :designation, 'Enter Contact designation :   ' %>  
+      </div>  
+      <div class="col">
+        <%= f.text_field :designation, :class => 'form-control large-input-grp', :id => "division-contact-designation-text", :placeholder => "Enter Company designation" %>  
+      </div>
+
+      <br>
+      <br>
+      <div class="w-100">
+        <span style="margin-left: 50%;">
+          <%= button_tag(type: 'submit', class: "btn btn-success", id: "create_division_contact_main") do %>
+          Create  
+          <% end %>         
+        </span>
+               
+      </div>
+    </div>    
+    
+  <%end%>
+</div>

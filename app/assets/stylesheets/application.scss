@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ @import "bootstrap";
+ @import "pages";
+
+ .parent-container{
+ 	margin: 5%;
+    font-family: arial, sans-serif;
+ }
+
+ .cm-bg{
+ 	background-color: rgb(11, 24, 58) !important;
+ 	color: white;
+ }
+
+ .cm-footer{
+ 	height: 60px;
+ 	padding: 0%;
+ 	width: 100%;
+    bottom: 0;
+    position: fixed;
+    background-color: rgb(232, 237, 201);
+ }
+
+.large-input-grp{
+    min-width: 0;
+    width: auto;
+    display: inline;	
+}
+
+.width-100{
+	width: 100% !important;
+}
+
+.landing-bg{
+	background-color: rgb(237, 239, 255) !important;
+	padding: 3%;
+	min-width: 0;
+	font-family: Brandon Grotesque !important;
+	border-radius: 1.5 em;
+}
+
+.my-btn-1 {
+  @include button-variant(#153834, white, rgb(71, 75, 76));
+}
+
+.my-btn-2 {
+  @include button-variant(#153834, white, rgb(71, 75, 76));
+}
+
+.my-btn-4{	
+	@include button-variant(rgb(25, 48, 56), white, rgb(71, 75, 76));
+}

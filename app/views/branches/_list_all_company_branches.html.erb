@@ -1,0 +1,3 @@
+<% branches.each do |bra| %>
+   <li class="list-group-item"><h3>Branch name :  <p class="badge badge-secondary"><%= bra.name %></p><p><%= link_to image_tag("home.png", :border=>0, :width => 20, :height => 20), branch_branch_page_path(bra.id)%></p></h3></li>
+<% end %>

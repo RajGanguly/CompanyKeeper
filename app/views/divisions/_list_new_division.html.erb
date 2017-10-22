@@ -1,0 +1,10 @@
+<div class="row" style="color: #270056">
+  <div class="col">
+     <h1><%= newDivision.name %></h1>
+  </div>
+  <div class="col">
+    <%= button_to "Visit division page", division_division_page_path(newDivision.id), class: "btn btn-success", id: "division-page-btn", :type => "button", :method => "get"%>
+  </div>
+</div>
+
+

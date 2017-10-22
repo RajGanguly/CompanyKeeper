@@ -1,0 +1,25 @@
+<div class= "parent-container">
+  <%= form_for(@branch, url: company_branches_path, :html => {id: "new-branch-create" },remote: true, method: 'POST') do |f| %>
+     <div class= "form-group">
+       <%= f.label :name, 'Enter a Branch Name :   ' %> 
+       <%= f.text_field :name, :class => 'form-control', :id => "branch-name-text", :placeholder => "Enter any Branch Name" %> 
+       <small class="form-text text-muted">Enter a relevant branch name</small>
+    </div> 
+    <div class="form-group"> 
+      <%= f.label :address, 'Enter the branch address' %> 
+      <%= f.text_field :address, :class => 'form-control', :id => "branch-address-text", :placeholder => "Enter the branch address" %>     
+    </div>
+    <div class="form-group"> 
+      <%= f.label :landline, 'Enter the landline number' %> 
+      <%= f.number_field :landline, :class => 'form-control', :id => "branch-landline-text", :placeholder => "Enter the landline number" %>     
+    </div>
+
+    <div class="w-100">
+      <span style="margin-left: 40%;">
+        <%= button_tag(type: 'submit', class: "btn btn-success", id: "create_branch_btn") do %>
+          Create
+      </span>     
+    </div>  
+    <% end %>
+  <%end%>
+</div>

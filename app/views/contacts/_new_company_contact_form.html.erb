@@ -1,0 +1,83 @@
+<div class= "parent-container">
+  <%= form_for(@contact, url: company_contacts_path, :html => { class: "form-inline", id: "new-company-contact-create" },remote: true, method: 'POST') do |f| %>
+
+    <div class="row" style="width: 100%;"> 
+      <div class= "w-100">
+        <div class="col" id="branch-list-container">
+          <% if @canCreateContact %>
+              <div><small class="form-text text-muted">Select a Branch:</small></div>
+              <select class="selectpicker" id="branches-select" onchange="branchChanged(this)" style="min-width: 0; width: 100%;" data-live-search="true">
+                <% @branches.each do |br| %>
+                   <option data-id='<%= br.id %>' value='<%= br.id %>'><%= br.name %></option>
+                <% end %>
+              </select>
+                <input type="hidden" name="selected_branch_id" id="selected_branch_id" value='<%= @branches.first.id %>'/>          
+          <% end %>
+        </div>  
+      </div>
+
+      <div class="w-100">
+        <div class="col" id= "division-list-container">
+          <% if @canCreateContact %>
+            <div><small class="form-text text-muted">Select a Division:</small></div>
+            <select class="selectpicker" id="divisions-select" onchange="divisionChanged(this)" style="min-width: 0; width: 100%;"  data-live-search="true">
+              <% @divisions.each do |div| %>
+                 <option data-id='<% div.id %>' value='<%= div.id %>'><%= div.name %></option>
+              <% end %>
+            </select>
+            <input type="hidden" name="selected_division_id" id="selected_division_id" value='<%= @divisions.first.id %>'/> 
+          <% end %>         
+        </div>
+      </div> 
+    </div>
+
+        
+        <!-- <div style="margin-top: 3%;"> -->
+      <br>
+      <br>  
+      <div class="row" style="margin-top: 3%;">
+          <div class="col">
+            <%= f.label :name, 'Enter Name :' %> 
+          </div>  
+          <div class="col">
+            <%= f.text_field :name, :class => 'form-control large-input-grp', :id => "company-contact-name-text", :placeholder => "Enter any Company Name" %>
+          </div>
+          <div class="w-100"></div> 
+
+          <div class="col">
+            <%= f.label :mobile, 'Enter mobile number :   ' %> 
+          </div>  
+          <div class="col">
+            <%= f.number_field :mobile, :class => 'form-control large-input-grp', :id => "company-contact-mobile-text", :placeholder => "Enter Contact mobile number" %>
+          </div>
+          <div class="w-100"></div>  
+
+          <div class="col">
+            <%= f.label :email, 'Enter email :   ' %>  
+          </div>  
+          <div class="col">
+            <%= f.email_field :email, :class => 'form-control large-input-grp', :id => "company-contact-email-text", :placeholder => "Enter Contact email" %>  
+          </div>
+
+          <div class="w-100"></div>  
+
+          <div class="col">
+            <%= f.label :designation, 'Enter designation :   ' %>  
+          </div>  
+          <div class="col">
+            <%= f.text_field :designation, :class => 'form-control large-input-grp', :id => "company-contact-designation-text", :placeholder => "Enter designation" %>  
+          </div>
+
+          <div class="w-100">
+            <span style="margin-left: 50%;">
+              <%= button_tag(type: 'submit', class: "btn btn-success", id: "create_company_contact_main") do %>
+              Create  
+              <% end %>         
+            </span>
+                   
+          </div>
+        <!-- </div>   -->
+    </div>    
+    
+  <%end%>
+</div>

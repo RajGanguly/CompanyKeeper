@@ -9,12 +9,21 @@
 		    <div class="col col-6">
 			    <div class="row">
 			        <div class="col">
+			            <% if @canCreateContact %>
+	                        <div id="contact-btn-div">
+				              <%= button_tag "Create a Contact", class: "btn my-btn-4", id: "create_company_contact_btn", onclick: "javascript: showNewContactForm()", :type => "button"%>	
+	                        </div>
+	                    <% else %>
+	                        <div id="contact-btn-div" style="display: none">
+				              <%= button_tag "Create a Contact", class: "btn my-btn-4", id: "create_company_contact_btn", onclick: "javascript: showNewContactForm()", :type => "button"%>	
+	                        </div>	                    
+	                    <% end %>    
 			        </div>
 			        <div class="col">
-                      <%= button_tag "Create a Branch", class: "btn my-btn-4", id: "create_branch_btn", onclick: "javascript: showNewBranchForm()", :type => "button"%>			      	
+                       <%= button_tag "Create a Branch", class: "btn my-btn-4", id: "create_branch_btn", onclick: "javascript: showNewBranchForm()", :type => "button"%>			      	
 			        </div>
 			        <div class="col">
-                      <%= button_tag "Create a Division", class: "btn btn my-btn-4", id: "create_division_btn", :type => "button", onclick: "javascript: showNewDivisionForm()"%>			      	
+                        <%= button_tag "Create a Division", class: "btn btn my-btn-4", id: "create_division_btn", :type => "button", onclick: "javascript: showNewDivisionForm()"%>			      	
 			        </div>
 			    </div>
 			</div>
@@ -63,20 +72,31 @@
 			            <div id="created-divisions-div" style="display: none; margin-left: 15%;">
 
 			            </div>
+                        
+			            <div id= "new-company-contact-form" style="display: none;">
+			            	<%= render "contacts/new_company_contact_form" %>
+			            </div>
+
+                        <div id="created-contacts-div" style="display: none;">
+                        </div>
+
 			        </div>   
 		        </div>   
 	        </div> 
 		    <div class="col col-3">
 		        <div class="row">
 		            <div class="col">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="List buttons">
+						    <button type="button" class="btn btn-primary" onclick="javascript: showAllContacts()">Contacts</button>
+						    <button type="button" class="btn btn-primary" onclick="javascript: showAllBranches()">Branches</button>
+						    <button type="button" class="btn btn-primary" onclick="javascript: showAllDivisions()">Divisions</button>                        	
+                        </div>
+
 			            <div id= "list-all-branches">
 							<div class="card" style="width: 20rem;">
-							  <ul class="list-group list-group-flush" id="company-branches-ul">
-
+							  <ul class="list-group list-group-flush" id="allListItems" >
+                                   
 				              </ul>  
-							  <ul class="list-group list-group-flush" id="company-divisions-ul">
-
-				              </ul>				              
 							</div>			           	  
 			            </div>
 			        </div>   

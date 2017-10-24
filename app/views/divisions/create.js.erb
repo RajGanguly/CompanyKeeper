@@ -5,3 +5,8 @@ $("div#new-division-form").hide();
 $("p#list-desc").text('List of all divisions');
 $("ul#company-branches-ul").hide();
 $("ul#company-divisions-ul").append("<%= j render partial: 'list_all_company_divisions', locals: {divisions: @divisions} %>").show();
+<% if @canCreateContact %>
+  $("div#contact-btn-div").show();
+  $("div#branch-list-container").html("").append("<%= j render partial: 'companies/list_of_all_branches', locals: {branches: @branches} %>").show(); 
+  $("div#division-list-container").html("").append("<%= j render partial: 'companies/list_of_all_divisions', locals: {divisions: @divisions} %>").show();   
+<% end %>

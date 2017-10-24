@@ -8,9 +8,14 @@ class CompaniesController < ApplicationController
 
 	def company_page
 		@allCompanies = Company.all.order("created_at DESC")
+		@canCreateContact = false
 		@company = Company.find(params[:company_id])
 		@branch = Branch.new
 		@division = Division.new
+		@contact = Contact.new
+		@branches = @company.branches
+		@divisions = @company.divisions
+		@canCreateContact = true if @company.branches.count >=1 && @company.divisions.count >= 1
 	end	
 
 	def create
@@ -27,6 +32,24 @@ class CompaniesController < ApplicationController
 		end		
 	end	
 
+	def getAllContacts
+		@company = Company.find(params[:company_id])
+		@contacts = @company.contacts
+		render :partial => "companies/all_contacts"
+	end	
+
+	def getAllBranches
+		@company = Company.find(params[:company_id])
+		@branches = @company.branches
+		render :partial => "companies/all_branches"
+	end	
+
+
+	def getAllDivisions
+		@company = Company.find(params[:company_id])
+		@divisions = @company.divisions
+		render :partial => "companies/all_divisions"
+	end	
 
     private
 	  def company_params

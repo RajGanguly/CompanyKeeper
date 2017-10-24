@@ -3,22 +3,12 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+A test assignment on Rails Active Record features
 
-* Ruby version
 
-* System dependencies
+Ruby - 2.4.1
+Rails - 5.1
+Database: Postgres
+Check the sample app here:
+https://young-caverns-94820.herokuapp.com
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
